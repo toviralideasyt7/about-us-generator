@@ -1,0 +1,117 @@
+<form>
+    <label>Website Name: </label>
+    <textarea class="Web_Name" name="Web_Name" placeholder="Ex- LiteBlogging" rows="1"></textarea>
+    
+    <label>Website Type: </label>
+    <textarea class="Web_Type" name="Web_Type" placeholder="Ex- Recipe, Finance, Fashion" rows="1"></textarea>
+  
+    <label>What Kind Of Contect do You Publish: </label>
+    <textarea class="Web_Spec" name="Web_Spec" placeholder="Ex- How to, Price prediction, celebrity biography" rows="1"></textarea>
+  
+    <button class="btn" type="button">Generate Your About Us Page</button><br />
+      <br />
+       <p><b>Copy your About Us Page below!!</b></p>
+      <textarea class="result" name="result" rows="10"></textarea>
+    
+    <button class="btn_cpy" type="button">Copy HTML Code</button><br /><br /></form><div class="P_Sample">
+      <h3 style="text-align: center;">Welcome to our website <span class="W_Name1">WebsiteName</span></h3>
+      <p>We are a <span class="W_Type1">WebsiteType</span> website that is dedicated to providing our audience with valuable and informative <span class="W_Spec">WebsiteSpeciality</span> </p>
+      <br>
+      <p>
+        Our team is made up of a group of experts in the field, who are passionate about sharing their knowledge and experience with our readers. We strive to create high-quality content that is not only informative but also engaging and entertaining.
+      </p>
+      <br>
+      <p>We understand that our readers come from all walks of life and have different interests, which is why we strive to cover a wide range of topics on our website. We believe that by providing a diverse range of content, we can cater to the needs of our audience and keep them engaged and interested.
+
+      </p>
+      <br>
+      <p>
+        Our articles are researched and written by a team of experienced writers, who have a wealth of knowledge in their respective fields. We fact-check all of our content to ensure that it is accurate and up-to-date.
+
+      </p>
+      <br>
+      <p>
+        In addition to our articles, we also have a number of interactive features on our website, such as polls, quizzes, and forums. These features give our readers the opportunity to engage with our content in a fun and interactive way.
+
+      </p>
+
+      <br>
+      <p>
+        We are constantly working to improve our website and make it more user-friendly. We welcome feedback and suggestions from our readers, and we strive to make our website as accessible and easy to use as possible.
+
+      </p>
+<br>
+  <p style="font-weight: bold; text-align: center;">Thank you for visiting our website, we hope you enjoy our content! If you have any questions or feedback, please do not hesitate to contact us.</p>
+      </div>
+  
+<script>
+  document.querySelector('.btn').addEventListener('click', myFunction1);
+  function myFunction1() {
+  var WebName = document.querySelector('.Web_Name').value;
+  var WebType = document.querySelector('.Web_Type').value;
+  var WebSpec = document.querySelector('.Web_Spec').value;
+
+  if (WebName == "") {
+    document.querySelector('.Web_Name').style.border = "1px solid red";
+    alert("Please Enter Your Website Name");
+  } else if (WebType == "") {
+    document.querySelector('.Web_Type').style.border = "1px solid red";
+    alert("Please Enter Your Website Type");
+  } else if (WebSpec == "") {
+    document.querySelector('.Web_Spec').style.border = "1px solid red";
+    alert("Please Enter Your Website Speciality");
+  } else {
+    document.querySelector('.Web_Name').style.border = "1px solid #ced4da";
+    document.querySelector('.Web_Type').style.border = "1px solid #ced4da";
+    document.querySelector('.Web_Spec').style.border = "1px solid #ced4da";
+    document.querySelector('.W_Name1').innerHTML = WebName;
+    document.querySelector('.W_Type1').innerHTML = WebType;
+    document.querySelector('.W_Spec').innerHTML = WebSpec;
+
+    var text = document.querySelector('.P_Sample').innerHTML;
+    document.querySelector('.result').innerHTML = text;
+  }
+}
+
+document.querySelector('.btn_cpy').addEventListener('click', function() {
+  myFunction2('.result');
+});
+
+function myFunction2(id) {
+  var copyText = document.querySelector(id);
+  copyText.select();
+  document.execCommand("copy");
+  document.querySelector(".btn_cpy").innerHTML = "Copied!";
+  setTimeout(function() {
+    document.querySelector(".btn_cpy").innerHTML = "Copy HTML Code";
+  }, 2000);
+}
+</script>
+
+<style>
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn_cpy {
+  background-color: #337ab7; /* Blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
